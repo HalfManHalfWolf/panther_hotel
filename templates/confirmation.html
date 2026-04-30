@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation - Panther Hotel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="navbar">🐾 PANTHER HOTEL</div>
+    <div class="container">
+        <div class="confirmation-box">
+            <h2>Reservation Confirmed!</h2>
+            <p>
+                Dear <strong>{{ name }}</strong>,<br><br>
+                Thanks for choosing the Panther Hotel. We are happy to confirm your reservation
+                from <strong>{{ checkin }}</strong> to <strong>{{ checkout }}</strong>.
+                Have a great stay!
+            </p>
+        </div>
+        <br>
+        <a href="/" class="btn-red">Back to Home</a>
+    </div>
+</body>
+</html>

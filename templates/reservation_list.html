@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservation List - Panther Hotel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="navbar">🐾 PANTHER HOTEL</div>
+    <div class="container" style="max-width: 900px;">
+        <h2>Reservation List</h2>
+        {% if reservations %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Check-in Date</th>
+                    <th>Check-out Date</th>
+                    <th>Room Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for r in reservations %}
+                <tr>
+                    <td>{{ r[0] }}</td>
+                    <td>{{ r[1] }}</td>
+                    <td>{{ r[2] }}</td>
+                    <td>{{ r[3] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No reservations yet.</p>
+        {% endif %}
+        <br>
+        <a href="/" class="btn-red">Back to Home</a>
+    </div>
+</body>
+</html>
